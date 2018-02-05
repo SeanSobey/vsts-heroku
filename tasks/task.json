@@ -1,0 +1,40 @@
+{
+	"id": "9a084383-7dec-4f4b-ba29-712141737e6b",
+	"name": "vsts-heroku",
+	"friendlyName": "VSTS Heroku",
+	"description": "Heroku CLI for VSTS",
+	"helpMarkDown": "https://github.com/SeanSobey/vsts-heroku/wiki",
+	"category": "Deploy",
+	"visibility": [
+		"Release"
+	],
+	"runsOn": [
+		"Agent",
+		"DeploymentGroup"
+	],
+	"author": "Sean Sobey",
+	"version": {
+		"Major": 1,
+		"Minor": 0,
+		"Patch": 0
+	},
+	"demands": [
+		"node.js"
+	],
+	"instanceNameFormat": "Echo $(samplestring)",
+	"groups": [
+		{
+			"name": "advanced",
+			"displayName": "Advanced",
+			"isExpanded": false
+		}
+	],
+	"inputs": [
+	],
+	"execution": {
+		"Node": {
+			"target": "dist/index.js"
+		}
+	},
+	"messages": {}
+}

@@ -1,0 +1,53 @@
+{
+	"manifestVersion": 1,
+	"id": "vsts-heroku",
+	"name": "Heroku Tools",
+	"version": "1.0.0",
+	"publisher": "Sean Sobey",
+	"targets": [
+		{
+			"id": "Microsoft.VisualStudio.Services"
+		}
+	],
+	"description": "Tools for building with Fabrikam. Includes one build task.",
+	"categories": [
+		"Build and release"
+	],
+	"icons": {
+		"default": "vss-extension-icon.png"
+	},
+	"files": [
+		{
+			"path": "task"
+		}
+	],
+	"contributions": [
+		{
+			"id": "custom-build-task",
+			"type": "ms.vss-distributed-task.task",
+			"targets": [
+				"ms.vss-distributed-task.tasks"
+			],
+			"properties": {
+				"name": "tasks"
+			}
+		}
+	],
+	"links": {
+		"home": {
+			"uri": "https://github.com/SeanSobey/vsts-heroku"
+		},
+		"getstarted": {
+			"uri": "https://github.com/SeanSobey/vsts-heroku/wiki"
+		},
+		"issues": {
+			"uri": "https://github.com/SeanSobey/vsts-heroku/issues"
+		},
+		"license": {
+			"uri": "https://github.com/SeanSobey/vsts-heroku/blob/master/LICENSE"
+		},
+		"repository": {
+			"uri": "https://github.com/SeanSobey/vsts-heroku"
+		}
+	}
+}
