@@ -1,27 +1,25 @@
 {
 	"id": "9a084383-7dec-4f4b-ba29-712141737e6b",
-	"name": "vsts-heroku",
-	"friendlyName": "VSTS Heroku",
-	"description": "Heroku CLI for VSTS",
-	"helpMarkDown": "https://github.com/SeanSobey/vsts-heroku/wiki",
+	"name": "vsts-heroku-cli-task",
+	"friendlyName": "VSTS Heroku CLI",
+	"description": "Run a Heroku CLI command as a task",
+	"helpMarkDown": "https://devcenter.heroku.com/articles/heroku-cli-commands",
 	"category": "Deploy",
-	"visibility": [
-		"Release"
-	],
-	"runsOn": [
-		"Agent",
-		"DeploymentGroup"
-	],
 	"author": "Sean Sobey",
 	"version": {
 		"Major": 1,
 		"Minor": 0,
 		"Patch": 0
 	},
+	"runsOn": [
+		"Agent",
+		"DeploymentGroup"
+	],
 	"demands": [
 		"node.js"
 	],
-	"instanceNameFormat": "Echo $(samplestring)",
+	"minimumAgentVersion": "1.91.0",
+	"instanceNameFormat": "Heroku $(command)",
 	"groups": [
 		{
 			"name": "advanced",
@@ -30,6 +28,22 @@
 		}
 	],
 	"inputs": [
+		{
+			"name": "command",
+			"label": "Command",
+			"helpMarkDown": "The [command](https://devcenter.heroku.com/articles/heroku-cli-commands) and arguments which will be passed to Heroku CLI for execution.\n\nIf your arguments contain double quotes (\"), escape them with a slash (\\), and surround the escaped string with double quotes (\").",
+			"type": "string",
+			"required": true,
+			"defaultValue": ""
+		},
+		{
+			"name": "api_key",
+			"label": "API Key",
+			"helpMarkDown": "An valid API Key that represents a valid app contributor.",
+			"type": "string",
+			"defaultValue": "",
+			"required": true
+		}
 	],
 	"execution": {
 		"Node": {
