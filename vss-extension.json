@@ -2,14 +2,14 @@
 	"manifestVersion": 1,
 	"id": "vsts-heroku-cli",
 	"name": "Heroku Tools",
-	"version": "1.0.0",
-	"publisher": "Sean Sobey",
+	"version": "1.0.2",
+	"publisher": "seansobey",
 	"targets": [
 		{
 			"id": "Microsoft.VisualStudio.Services"
 		}
 	],
-	"description": "Tools for building with Fabrikam. Includes one build task.",
+	"description": "Heroku CLI Tools for VSTS.",
 	"categories": [
 		"Build and release"
 	],
@@ -18,7 +18,7 @@
 	},
 	"files": [
 		{
-			"path": "task"
+			"path": "tasks"
 		}
 	],
 	"contributions": [

@@ -1,7 +1,7 @@
 {
 	"name": "vsts-heroku-cli",
-	"version": "1.0.0",
-	"description": "Heroku CLI for VSTS",
+	"version": "1.0.2",
+	"description": "Heroku CLI Tools for VSTS.",
 	"main": "dist/index.js",
 	"scripts": {
 		"start": "node dist/index.js",
