@@ -1,6 +1,6 @@
 {
 	"manifestVersion": 1,
-	"id": "vsts-heroku",
+	"id": "vsts-heroku-cli",
 	"name": "Heroku Tools",
 	"version": "1.0.0",
 	"publisher": "Sean Sobey",
@@ -35,19 +35,19 @@
 	],
 	"links": {
 		"home": {
-			"uri": "https://github.com/SeanSobey/vsts-heroku"
+			"uri": "https://github.com/SeanSobey/vsts-heroku-cli"
 		},
 		"getstarted": {
-			"uri": "https://github.com/SeanSobey/vsts-heroku/wiki"
+			"uri": "https://github.com/SeanSobey/vsts-heroku-cli/wiki"
 		},
 		"issues": {
-			"uri": "https://github.com/SeanSobey/vsts-heroku/issues"
+			"uri": "https://github.com/SeanSobey/vsts-heroku-cli/issues"
 		},
 		"license": {
-			"uri": "https://github.com/SeanSobey/vsts-heroku/blob/master/LICENSE"
+			"uri": "https://github.com/SeanSobey/vsts-heroku-cli/blob/master/LICENSE"
 		},
 		"repository": {
-			"uri": "https://github.com/SeanSobey/vsts-heroku"
+			"uri": "https://github.com/SeanSobey/vsts-heroku-cli"
 		}
 	}
 }

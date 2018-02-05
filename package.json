@@ -1,5 +1,5 @@
 {
-	"name": "vsts-heroku",
+	"name": "vsts-heroku-cli",
 	"version": "1.0.0",
 	"description": "Heroku CLI for VSTS",
 	"main": "dist/index.js",
@@ -13,21 +13,22 @@
 		"watch-test": "mocha --watch --opts ./mocha.opts dist/**/*.spec.js"
 	},
 	"bugs": {
-		"url": "https://github.com/SeanSobey/vsts-heroku/issues",
+		"url": "https://github.com/SeanSobey/vsts-heroku-cli/issues",
 		"email": "sean.m.sobey@gmail.com"
 	},
 	"author": {
 		"name": "Sean Sobey",
 		"email": "sean.m.sobey@gmail.com"
 	},
-	"homepage": "https://github.com/SeanSobey/vsts-heroku",
+	"homepage": "https://github.com/SeanSobey/vsts-heroku-cli",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/SeanSobey/vsts-heroku.git"
+		"url": "https://github.com/SeanSobey/vsts-heroku-cli.git"
 	},
 	"readme": "README.md",
 	"license": "LICENSE",
 	"dependencies": {
+		"heroku-cli": "^6.15.22",
 		"tslib": "^1.9.0",
 		"vsts-task-lib": "^2.1.0"
 	},
