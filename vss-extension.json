@@ -2,7 +2,7 @@
 	"manifestVersion": 1,
 	"id": "vsts-heroku-cli",
 	"name": "Heroku Tools",
-	"version": "1.0.2",
+	"version": "1.0.5",
 	"publisher": "seansobey",
 	"targets": [
 		{
@@ -19,6 +19,9 @@
 	"files": [
 		{
 			"path": "tasks"
+		},
+		{
+			"path": "dist"
 		}
 	],
 	"contributions": [
