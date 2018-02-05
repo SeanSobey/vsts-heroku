@@ -11,7 +11,9 @@
 		"debug": "node --inspect-brk=33295 --nolazy dist/index.js",
 		"debug-test": "node --inspect-brk=33295 --nolazy node_modules/mocha/bin/_mocha --opts ./mocha.opts dist/**/*.spec.js",
 		"watch-build": "tsc --watch",
-		"watch-test": "mocha --watch --opts ./mocha.opts dist/**/*.spec.js"
+		"watch-test": "mocha --watch --opts ./mocha.opts dist/**/*.spec.js",
+		"tfx-package": "tfx extension create --manifest-globs vss-extension.json --rev-version",
+		"tfx-publish": "tfx extension publish --manifest-globs vss-extension.json"
 	},
 	"bugs": {
 		"url": "https://github.com/SeanSobey/vsts-heroku-cli/issues",
