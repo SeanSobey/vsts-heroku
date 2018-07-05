@@ -9,8 +9,8 @@
 			"type": "node",
 			"request": "launch",
 			"protocol": "inspector",
-			"cwd": "${workspaceRoot}",
-			"runtimeExecutable": "npm",
+			"cwd": "${workspaceRoot}/tasks/runCli",
+      "runtimeExecutable": "npm",
 			"windows": {
 				"runtimeExecutable": "npm.cmd"
 			},
@@ -21,7 +21,11 @@
 			"port": 33295,
 			"env": {
 				"NODE_ENV": "development",
-				"INPUT_SAMPLESTRING": "help"
+				"INPUT_VERSIONSPEC": "7.5.10",
+				"AGENT_TEMPDIRECTORY": "${workspaceRoot}/tempDir",
+				"AGENT_TOOLSDIRECTORY": "${workspaceRoot}/toolsDir",
+				"INPUT_APIKEY": "70b4a4fe-6854-4dd3-8d0e-969c42009c9f",
+				"INPUT_COMMAND": "--version",
 			}
 		},
 		{

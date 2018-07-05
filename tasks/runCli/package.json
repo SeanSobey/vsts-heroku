@@ -1,0 +1,19 @@
+{
+  "name": "run-cli",
+  "private": true,
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "prebuild": "del-cli -d './dist/**/*.{js,map}'",
+    "build": "tsc",
+    "test": "mocha --opts ../../mocha.opts dist/**/*.spec.js",
+    "debug": "node --inspect-brk=33295 --nolazy dist/index.js",
+    "debug-test": "node --inspect-brk=33295 --nolazy ../../node_modules/mocha/bin/_mocha --opts ../../mocha.opts dist/**/*.spec.js",
+    "watch-build": "tsc --watch",
+    "watch-test": "mocha --watch --opts ../../mocha.opts dist/**/*.spec.js"
+  },
+  "dependencies": {
+    "tslib": "^1.9.3",
+    "vsts-task-lib": "^2.5.0"
+  }
+}

@@ -1,43 +1,51 @@
 {
-	// See https://go.microsoft.com/fwlink/?LinkId=733558
-	// for the documentation about the tasks.json format
-	"version": "2.0.0",
-	"tasks": [
-		{
-			"type": "npm",
-			"script": "build",
-			"group": {
-				"kind": "build",
-				"isDefault": true
-			},
-			"problemMatcher": [
-				"$tsc"
-			]
-		},
-		{
-			"type": "npm",
-			"script": "watch-build",
-			"group": "build",
-			"isBackground": true,
-			"problemMatcher": [
-				"$tsc"
-			]
-		},
-		{
-			"type": "npm",
-			"script": "test",
-			"group": {
-				"kind": "test",
-				"isDefault": true
-			},
-			"problemMatcher": []
-		},
-		{
-			"type": "npm",
-			"script": "watch-test",
-			"isBackground": true,
-			"group": "test",
-			"problemMatcher": []
-		}
-	]
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    // {
+    //   "label": "build",
+    //   "type": "npm",
+    //   "script": "build",
+    //   "path": "tasks/runCli/",
+    //   "group": {
+    //     "kind": "build",
+    //     "isDefault": true
+    //   },
+    //   "problemMatcher": [
+    //     "$tsc"
+    //   ]
+    // },
+    // {
+    //   "label": "watch-build",
+    //   "type": "npm",
+    //   "script": "watch-build",
+    //   "path": "tasks/runCli/",
+    //   "group": "build",
+    //   "isBackground": true,
+    //   "problemMatcher": [
+    //     "$tsc"
+    //   ]
+    // },
+    // {
+    //   "label": "test",
+    //   "type": "npm",
+    //   "script": "test",
+    //   "path": "tasks/runCli/",
+    //   "group": {
+    //     "kind": "test",
+    //     "isDefault": true
+    //   },
+    //   "problemMatcher": []
+    // },
+    // {
+    //   "label": "watch-test",
+    //   "type": "npm",
+    //   "script": "watch-test",
+    //   "path": "tasks/runCli/",
+    //   "isBackground": true,
+    //   "group": "test",
+    //   "problemMatcher": []
+    // }
+  ]
 }

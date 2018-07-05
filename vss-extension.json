@@ -1,56 +1,65 @@
 {
-	"manifestVersion": 1,
-	"id": "vsts-heroku-cli",
-	"name": "Heroku Tools",
-	"version": "1.0.5",
-	"publisher": "seansobey",
-	"targets": [
-		{
-			"id": "Microsoft.VisualStudio.Services"
-		}
-	],
-	"description": "Heroku CLI Tools for VSTS.",
-	"categories": [
-		"Build and release"
-	],
-	"icons": {
-		"default": "vss-extension-icon.png"
-	},
-	"files": [
-		{
-			"path": "tasks"
-		},
-		{
-			"path": "dist"
-		}
-	],
-	"contributions": [
-		{
-			"id": "custom-build-task",
-			"type": "ms.vss-distributed-task.task",
-			"targets": [
-				"ms.vss-distributed-task.tasks"
-			],
-			"properties": {
-				"name": "tasks"
-			}
-		}
-	],
-	"links": {
-		"home": {
-			"uri": "https://github.com/SeanSobey/vsts-heroku-cli"
-		},
-		"getstarted": {
-			"uri": "https://github.com/SeanSobey/vsts-heroku-cli/wiki"
-		},
-		"issues": {
-			"uri": "https://github.com/SeanSobey/vsts-heroku-cli/issues"
-		},
-		"license": {
-			"uri": "https://github.com/SeanSobey/vsts-heroku-cli/blob/master/LICENSE"
-		},
-		"repository": {
-			"uri": "https://github.com/SeanSobey/vsts-heroku-cli"
-		}
-	}
+  "manifestVersion": 1,
+  "id": "vsts-heroku-cli",
+  "name": "Heroku Tools",
+  "version": "1.1.3",
+  "publisher": "seansobey",
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "description": "Heroku CLI Tools for VSTS.",
+  "categories": [
+    "Build and release"
+  ],
+  "icons": {
+    "default": "vss-extension-icon.png"
+  },
+  "files": [
+    {
+      "path": "tasks"
+    }
+  ],
+  "contributions": [
+    {
+      "id": "vsts-heroku-cli-install",
+      "description": "Finds or Downloads and caches Heroku CLI and adds it to the PATH.",
+      "type": "ms.vss-distributed-task.task",
+      "targets": [
+        "ms.vss-distributed-task.tasks"
+      ],
+      "properties": {
+        "name": "tasks/installCli"
+      }
+    },
+    {
+      "id": "vsts-heroku-cli-run",
+      "description": "Run a Heroku CLI command as a task.",
+      "type": "ms.vss-distributed-task.task",
+      "targets": [
+        "ms.vss-distributed-task.tasks"
+      ],
+      "properties": {
+        "name": "tasks/runCli"
+      }
+    }
+  ],
+  "links": {
+    "home": {
+      "uri": "https://github.com/SeanSobey/vsts-heroku-cli"
+    },
+    "getstarted": {
+      "uri": "https://github.com/SeanSobey/vsts-heroku-cli/wiki"
+    },
+    "issues": {
+      "uri": "https://github.com/SeanSobey/vsts-heroku-cli/issues"
+    },
+    "license": {
+      "uri": "https://github.com/SeanSobey/vsts-heroku-cli/blob/master/LICENSE"
+    },
+    "repository": {
+      "uri": "https://github.com/SeanSobey/vsts-heroku-cli"
+    }
+  }
 }
