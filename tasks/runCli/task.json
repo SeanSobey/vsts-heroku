@@ -1,26 +1,38 @@
 {
-  "id": "9a084383-7dec-4f4b-ba29-712141737e6b",
+  "id": "54467c6c-6e62-40ee-9e35-1a6e8d584d94",
   "name": "vsts-heroku-cli-run",
   "friendlyName": "VSTS Heroku CLI",
   "description": "Run a Heroku CLI command as a task.",
-  "helpMarkDown": "https://devcenter.heroku.com/articles/heroku-cli-commands",
-  "category": "Deploy",
   "author": "Sean Sobey",
   "version": {
     "Major": 1,
-    "Minor": 1,
-    "Patch": 0
+    "Minor": 0,
+    "Patch": 3
   },
+  "helpMarkDown": "https://devcenter.heroku.com/articles/heroku-cli-commands",
+  "category": "Deploy",
+  "visibility": [
+    "Build",
+    "Release"
+  ],
   "runsOn": [
     "Agent",
     "DeploymentGroup"
   ],
+  "satisfies": [],
   "demands": [
     "node.js",
     "Heroku"
   ],
   "minimumAgentVersion": "1.91.0",
   "instanceNameFormat": "Heroku $(command)",
+  "groups": [
+    {
+      "name": "advanced",
+      "displayName": "Advanced",
+      "isExpanded": false
+    }
+  ],
   "inputs": [
     {
       "name": "command",
@@ -41,7 +53,8 @@
   ],
   "execution": {
     "Node": {
-      "target": "dist/index.js"
+      "target": "dist/index.js",
+      "argumentFormat": ""
     }
   },
   "messages": {}

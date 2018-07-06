@@ -2,23 +2,67 @@
   "manifestVersion": 1,
   "id": "vsts-heroku-cli",
   "name": "Heroku Tools",
-  "version": "1.1.3",
+  "description": "Heroku CLI Tools for VSTS.",
+  "version": "1.0.3",
   "publisher": "seansobey",
+  "icons": {
+    "default": "vss-extension-icon.png"
+  },
+  "tags": [
+    "Heroku"
+  ],
+  "links": {
+    "home": {
+      "uri": "https://github.com/SeanSobey/vsts-heroku-cli"
+    },
+    "getstarted": {
+      "uri": "https://marketplace.visualstudio.com/items?itemName=seansobey.vsts-heroku-cli"
+    },
+    "issues": {
+      "uri": "https://github.com/SeanSobey/vsts-heroku-cli/issues"
+    },
+    "license": {
+      "uri": "https://github.com/SeanSobey/vsts-heroku-cli/blob/master/LICENSE"
+    },
+    "repository": {
+      "uri": "https://github.com/SeanSobey/vsts-heroku-cli"
+    },
+    "learn": {
+      "uri": "https://github.com/SeanSobey/vsts-heroku-cli/wiki"
+    },
+    "support": {
+      "uri": "https://github.com/SeanSobey/vsts-heroku-cli/issues"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "uri": "https://github.com/SeanSobey/vsts-heroku-cli"
+  },
+  "screenshots": [],
+  "branding": {
+    "color": "rgb(167, 138, 201)",
+    "theme": "light"
+  },
+  "galleryFlags": [],
+  "scopes": [
+    "vso.build",
+    "vso.build_execute",
+    "vso.release"
+  ],
   "targets": [
     {
       "id": "Microsoft.VisualStudio.Services"
     }
   ],
-  "description": "Heroku CLI Tools for VSTS.",
   "categories": [
     "Build and release"
   ],
-  "icons": {
-    "default": "vss-extension-icon.png"
-  },
   "files": [
     {
-      "path": "tasks"
+      "path": "tasks/installCli"
+    },
+    {
+      "path": "tasks/runCli"
     }
   ],
   "contributions": [
@@ -44,22 +88,5 @@
         "name": "tasks/runCli"
       }
     }
-  ],
-  "links": {
-    "home": {
-      "uri": "https://github.com/SeanSobey/vsts-heroku-cli"
-    },
-    "getstarted": {
-      "uri": "https://github.com/SeanSobey/vsts-heroku-cli/wiki"
-    },
-    "issues": {
-      "uri": "https://github.com/SeanSobey/vsts-heroku-cli/issues"
-    },
-    "license": {
-      "uri": "https://github.com/SeanSobey/vsts-heroku-cli/blob/master/LICENSE"
-    },
-    "repository": {
-      "uri": "https://github.com/SeanSobey/vsts-heroku-cli"
-    }
-  }
+  ]
 }

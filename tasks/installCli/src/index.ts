@@ -1,7 +1,6 @@
 import * as os from 'os';
 import * as fs from 'fs';
 import * as path from 'path';
-import { URL } from 'url';
 
 import * as task from 'vsts-task-lib/task';
 import * as tool from 'vsts-task-tool-lib/tool';
@@ -40,8 +39,7 @@ async function downloadTool(platform: string, arch: string): Promise<string> {
 		if (fs.existsSync(filePath)) {
 			return filePath;
 		}
-		const url = new URL(fileName, `https://cli-assets.heroku.com`);
-		return await tool.downloadTool(url.toString(), fileName);
+		return await tool.downloadTool(`https://cli-assets.heroku.com/${fileName}`, fileName);
 	} catch (error) {
 		if (error.httpStatusCode && error.httpStatusCode === '404') {
 			throw new Error(`Unsupported platform and/or architecture: ${platform}-${arch}`);
@@ -62,7 +60,7 @@ async function extractTool(downloadPath: string, platform: string, arch: string)
 	if (!fs.existsSync(tarPath)) {
 		await tool.extract7z(downloadPath, tempDirectory, _7zPath);
 	}
-	return tempDirectory;
+	//return tempDirectory;
 	if (platform === 'win32') {
 		return await tool.extract7z(tarPath, tempDirectory, _7zPath);
 	}

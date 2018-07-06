@@ -1,30 +1,44 @@
 {
-  "id": "d65ae65e-5c0d-4dc2-84a2-eb48334a797f",
+  "id": "22ea7a35-f669-48bf-af37-f5f1d1ac11c8",
   "name": "vsts-heroku-cli-install",
   "friendlyName": "VSTS Heroku CLI Install",
   "description": "Finds or Downloads and caches Heroku CLI and adds it to the PATH.",
-  "helpMarkDown": "",
-  "category": "Tool",
   "author": "Sean Sobey",
   "version": {
     "Major": 1,
-    "Minor": 1,
-    "Patch": 0
+    "Minor": 0,
+    "Patch": 3
   },
+  "helpMarkDown": "",
+  "category": "Tool",
+  "visibility": [
+    "Build",
+    "Release"
+  ],
   "runsOn": [
     "Agent",
     "DeploymentGroup"
   ],
-  "satisfies": ["Heroku"],
+  "satisfies": [
+    "Heroku"
+  ],
   "demands": [
     "node.js"
   ],
   "minimumAgentVersion": "1.91.0",
   "instanceNameFormat": "Use Heroku",
-  "inputs": [ ],
+  "groups": [
+    {
+      "name": "advanced",
+      "displayName": "Advanced",
+      "isExpanded": false
+    }
+  ],
+  "inputs": [],
   "execution": {
     "Node": {
-      "target": "dist/index.js"
+      "target": "dist/index.js",
+      "argumentFormat": ""
     }
   },
   "messages": {}
