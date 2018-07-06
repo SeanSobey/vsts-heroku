@@ -4,12 +4,8 @@ export async function run(): Promise<number> {
 
 	const apiKey = task.getInput('apiKey', true);
 	const command = task.getInput('command', true);
-	//process.env['HEROKU_API_KEY'] = apiKey;
 	const tool = task.which('heroku');
-	const toolRunner = task.tool(tool).arg(command);
-	// toolRunner.on('debug', (message) => {
-	// 	console.log(message);
-	// });
+	const toolRunner = task.tool(tool).line(command);
 	return await toolRunner.exec({
 		env: {
 			HEROKU_API_KEY: apiKey

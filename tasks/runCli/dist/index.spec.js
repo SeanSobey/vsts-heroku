@@ -14,8 +14,8 @@ describe('run()', () => {
     // 	taskRunner.setInput('command', '424344'); //INPUT_COMMAND
     // 	taskRunner.run();
     // });
-    it('should run', async () => {
-        await app.run();
-    });
+    it('should run', () => tslib_1.__awaiter(this, void 0, void 0, function* () {
+        yield app.run();
+    }));
 });
 //# sourceMappingURL=index.spec.js.map
