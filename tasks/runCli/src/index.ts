@@ -6,9 +6,11 @@ export async function run(): Promise<number> {
 	const command = task.getInput('command', true);
 	const tool = task.which('heroku');
 	const toolRunner = task.tool(tool).line(command);
+	const homeDirectory = task.getVariable('Agent.HomeDirectory');
 	return await toolRunner.exec({
 		env: {
-			HEROKU_API_KEY: apiKey
+			HEROKU_API_KEY: apiKey,
+			HOME: homeDirectory,
 		}
 	} as any);
 }
