@@ -29,6 +29,8 @@ async function aquireTool(): Promise<string> {
 	if (!task.getInput('disableCache', true)) {
 		const cachedToolRoot = await tool.cacheDir(toolRoot, 'heroku', versionSpec, arch);
 		return path.join(cachedToolRoot, 'bin');
+	} else {
+		console.log('Skipping cache');
 	}
 	return path.join(toolRoot, 'bin');
 }
