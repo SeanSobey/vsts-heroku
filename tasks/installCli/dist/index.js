@@ -57,12 +57,16 @@ function extractTool(downloadPath, platform, arch) {
         }
         const _7zPath = path.join(__dirname, '..', 'bin', '7z.exe');
         const tarPath = path.join(tempDirectory, `heroku-${platform}-${arch}.tar`);
-        if (!fs.existsSync(tarPath)) {
-            yield tool.extract7z(downloadPath, tempDirectory, _7zPath);
-        }
-        //return tempDirectory;
         if (platform === 'win32') {
+            if (!fs.existsSync(tarPath)) {
+                yield tool.extract7z(downloadPath, tempDirectory, _7zPath);
+            }
             return yield tool.extract7z(tarPath, tempDirectory, _7zPath);
+        }
+        if (!fs.existsSync(tarPath)) {
+            const toolRunner = task.tool('tar');
+            toolRunner.arg(['xC', tempDirectory, '-f', downloadPath]);
+            yield toolRunner.exec();
         }
         return yield tool.extractTar(tarPath);
     });

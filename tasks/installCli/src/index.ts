@@ -57,12 +57,16 @@ async function extractTool(downloadPath: string, platform: string, arch: string)
 	}
 	const _7zPath = path.join(__dirname, '..', 'bin', '7z.exe');
 	const tarPath = path.join(tempDirectory, `heroku-${platform}-${arch}.tar`);
-	if (!fs.existsSync(tarPath)) {
-		await tool.extract7z(downloadPath, tempDirectory, _7zPath);
-	}
-	//return tempDirectory;
 	if (platform === 'win32') {
+		if (!fs.existsSync(tarPath)) {
+			await tool.extract7z(downloadPath, tempDirectory, _7zPath);
+		}
 		return await tool.extract7z(tarPath, tempDirectory, _7zPath);
+	}
+	if (!fs.existsSync(tarPath)) {
+		const toolRunner = task.tool('tar');
+		toolRunner.arg(['xC', tempDirectory, '-f', downloadPath]);
+		await toolRunner.exec();
 	}
 	return await tool.extractTar(tarPath);
 }
