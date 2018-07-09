@@ -26,7 +26,10 @@ async function aquireTool(): Promise<string> {
 	// const packagePath = path.join(toolRoot, 'package.json');
 	// const version = require(packagePath).version;
 	// const versionSpec = tool.cleanVersion(version);
-	await tool.cacheDir(toolRoot, 'heroku', versionSpec, arch);
+	if (!task.getInput('disableCache', true)) {
+		const cachedToolRoot = await tool.cacheDir(toolRoot, 'heroku', versionSpec, arch);
+		return path.join(cachedToolRoot, 'bin');
+	}
 	return path.join(toolRoot, 'bin');
 }
 
@@ -56,19 +59,17 @@ async function extractTool(downloadPath: string, platform: string, arch: string)
 		throw new Error('Expected Agent.TempDirectory to be set');
 	}
 	const _7zPath = path.join(__dirname, '..', 'bin', '7z.exe');
-	const tarPath = path.join(tempDirectory, `heroku-${platform}-${arch}.tar`);
 	if (platform === 'win32') {
+		const tarPath = path.join(tempDirectory, `heroku-${platform}-${arch}.tar`);
 		if (!fs.existsSync(tarPath)) {
 			await tool.extract7z(downloadPath, tempDirectory, _7zPath);
 		}
 		return await tool.extract7z(tarPath, tempDirectory, _7zPath);
 	}
-	if (!fs.existsSync(tarPath)) {
-		const toolRunner = task.tool('tar');
-		toolRunner.arg(['xC', tempDirectory, '-f', downloadPath]);
-		await toolRunner.exec();
-	}
-	return await tool.extractTar(tarPath);
+	const toolRunner = task.tool('tar');
+	toolRunner.arg(['xC', tempDirectory, '-f', downloadPath]);
+	await toolRunner.exec();
+	return tempDirectory;
 }
 
 run()

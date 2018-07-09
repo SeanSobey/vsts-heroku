@@ -7,7 +7,7 @@
   "version": {
     "Major": 1,
     "Minor": 0,
-    "Patch": 5
+    "Patch": 8
   },
   "helpMarkDown": "",
   "category": "Tool",
@@ -34,7 +34,16 @@
       "isExpanded": false
     }
   ],
-  "inputs": [],
+  "inputs": [
+    {
+      "name": "disableCache",
+      "label": "Disable cache",
+      "helpMarkDown": "Skip caching the build tool, use on hosted agents to speed up task since tools are not cached anyway.",
+      "type": "boolean",
+      "defaultValue": false,
+      "required": true
+    }
+  ],
   "execution": {
     "Node": {
       "target": "dist/index.js",
