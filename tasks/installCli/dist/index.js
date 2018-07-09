@@ -25,7 +25,13 @@ function aquireTool() {
         // const packagePath = path.join(toolRoot, 'package.json');
         // const version = require(packagePath).version;
         // const versionSpec = tool.cleanVersion(version);
-        yield tool.cacheDir(toolRoot, 'heroku', versionSpec, arch);
+        if (!task.getInput('disableCache', true)) {
+            const cachedToolRoot = yield tool.cacheDir(toolRoot, 'heroku', versionSpec, arch);
+            return path.join(cachedToolRoot, 'bin');
+        }
+        else {
+            console.log('Skipping cache');
+        }
         return path.join(toolRoot, 'bin');
     });
 }
@@ -56,19 +62,17 @@ function extractTool(downloadPath, platform, arch) {
             throw new Error('Expected Agent.TempDirectory to be set');
         }
         const _7zPath = path.join(__dirname, '..', 'bin', '7z.exe');
-        const tarPath = path.join(tempDirectory, `heroku-${platform}-${arch}.tar`);
         if (platform === 'win32') {
+            const tarPath = path.join(tempDirectory, `heroku-${platform}-${arch}.tar`);
             if (!fs.existsSync(tarPath)) {
                 yield tool.extract7z(downloadPath, tempDirectory, _7zPath);
             }
             return yield tool.extract7z(tarPath, tempDirectory, _7zPath);
         }
-        if (!fs.existsSync(tarPath)) {
-            const toolRunner = task.tool('tar');
-            toolRunner.arg(['xC', tempDirectory, '-f', downloadPath]);
-            yield toolRunner.exec();
-        }
-        return yield tool.extractTar(tarPath);
+        const toolRunner = task.tool('tar');
+        toolRunner.arg(['xC', tempDirectory, '-f', downloadPath]);
+        yield toolRunner.exec();
+        return tempDirectory;
     });
 }
 run()

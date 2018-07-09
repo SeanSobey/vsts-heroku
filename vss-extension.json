@@ -3,7 +3,7 @@
   "id": "vsts-heroku-cli",
   "name": "Heroku Tools",
   "description": "Heroku CLI Tools for VSTS.",
-  "version": "1.0.5",
+  "version": "1.0.9",
   "publisher": "seansobey",
   "icons": {
     "default": "vss-extension-icon.png"
