@@ -3,7 +3,7 @@
   "id": "vsts-heroku-cli",
   "name": "Heroku Tools",
   "description": "Heroku CLI Tools for VSTS.",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "publisher": "seansobey",
   "icons": {
     "default": "vss-extension-icon.png"
@@ -32,6 +32,14 @@
     },
     "support": {
       "uri": "https://github.com/SeanSobey/vsts-heroku-cli/issues"
+    }
+  },
+  "content": {
+    "details": {
+      "path": "README.md"
+    },
+    "license": {
+      "path": "LICENSE"
     }
   },
   "repository": {
