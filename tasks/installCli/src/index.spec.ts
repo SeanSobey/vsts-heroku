@@ -7,12 +7,11 @@ import * as mockRun from 'vsts-task-lib/mock-run';
 
 mocha.describe('run()', () => {
 
-	mocha.it('should run', () => {
+	mocha.it.skip('should run', () => {
 
 		const taskPath = path.join(__dirname, 'index.js');
 		const taskRunner = new mockRun.TaskMockRunner(taskPath);
-		taskRunner.setInput('api_key', '424344'); //INPUT_API_KEY
-		taskRunner.setInput('command', '424344'); //INPUT_COMMAND
+		taskRunner.setInput('disableCache', 'false');
 		taskRunner.run();
 	});
 });
